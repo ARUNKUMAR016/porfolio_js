@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import '../styles/Projects.css'
 
-import mkuImage from '../assets/MKU.png'
+
 
 const Projects = () => {
   const [ref, controls] = useScrollAnimation()
@@ -39,7 +39,7 @@ const Projects = () => {
       technologies: ["C#", "ASP.NET", "SQL Server"],
       github: "https://github.com/ArunKumar/web-application",
       live: "https://your-webapp-url.com",
-      image: mkuImage
+      
     },
     {
       title: "Website",
