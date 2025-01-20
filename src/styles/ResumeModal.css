@@ -1,0 +1,163 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 25, 47, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0a192f;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  z-index: 1001;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #8892b0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal h3 {
+  color: #64ffda;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.modal p {
+  color: #8892b0;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.action-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.action-btn.preview {
+  background: transparent;
+  color: #64ffda;
+  border: 1px solid #64ffda;
+}
+
+.action-btn.preview:hover {
+  background: rgba(100, 255, 218, 0.1);
+}
+
+.action-btn.download {
+  background: #64ffda;
+  color: #0a192f;
+}
+
+.action-btn.download:hover {
+  background: #9bf7e6;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 2rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Add cool gradient border animation */
+.modal::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #64ffda, #0a192f, #64ffda);
+  border-radius: 17px;
+  z-index: -1;
+  animation: borderAnimation 2s linear infinite;
+}
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: rgba(255, 107, 107, 0.1);
+}
+
+/* Add these styles */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.action-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+} 
